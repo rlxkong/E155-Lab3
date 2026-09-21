@@ -29,7 +29,7 @@ module lab3_mainfsm_rk(
         else        state <= nextstate;
 
     // scanner running
-    lab2_scanning_rk #(.limit(500000), .n(20)) scan_rows(reset, scan_en, clk, rows);
+    lab2_scanning_rk #(.limit(524288+1), .n(20)) scan_rows(reset, scan_en, clk, rows);
 
     always_comb
         case (state)
