@@ -23,7 +23,7 @@ module lab3_debounce_rk(
         else        state <= nextstate;
 
     // debounce counter
-    lab1_counter_rk #(.maxcount = 524288, .N = 20) counter(clk, (state == WAIT), (state == IDLE), rep_clk, count)
+    lab1_counter_rk #(.maxcount = 524289, .N = 20) counter(clk, (state == WAIT), (state == IDLE), rep_clk, count)
 
     always_comb
         case (state)
