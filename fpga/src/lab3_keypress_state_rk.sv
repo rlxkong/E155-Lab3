@@ -15,7 +15,11 @@ module lab3_keypress_state_rk(
     output logic [1:0]  col_idx
 );
 
-    logic   [15:0] keymap;
+    logic  	[15:0] keymap;
+	logic 	[3:0] r0;
+	logic 	[3:0] r1;	
+	logic 	[3:0] r2;	
+	logic 	[3:0] r3;	
 
     // get column readings from each row and compile into a keymap
     lab3_flipflop_rk row0(clk, rows[0], 1'b1, columns, r0);
@@ -35,82 +39,82 @@ module lab3_keypress_state_rk(
                 press = 1;
             end
             16'b0000_0000_0000_0010: begin
-                switch = 4'0010;        //2
+                switch = 4'b0010;        //2
                 col_idx = 2'b01;        //col 1
                 press = 1;
             end
             16'b0000_0000_0000_0100: begin
-                switch = 4'0011;        //3
+                switch = 4'b0011;        //3
                 col_idx = 2'b10;        //col 2
                 press = 1;
             end
             16'b0000_0000_0000_1000: begin
-                switch = 4'1010;        //A
+                switch = 4'b1010;        //A
                 col_idx = 2'b11;        //col 3
                 press = 1;
             end
             16'b0000_0000_0001_0000: begin
-                switch = 4'0100;        //4
+                switch = 4'b0100;        //4
                 col_idx = 2'b00;        //col 0
                 press = 1;
             end
             16'b0000_0000_0010_0000: begin
-                switch = 4'0101;        //5
+                switch = 4'b0101;        //5
                 col_idx = 2'b01;        //col 1
                 press = 1;
             end
             16'b0000_0000_0100_0000: begin
-                switch = 4'0110;        //6
+                switch = 4'b0110;        //6
                 col_idx = 2'b10;        //col 2
                 press = 1;
             end
             16'b0000_0000_1000_0000: begin
-                switch = 4'1011;        //B
+                switch = 4'b1011;        //B
                 col_idx = 2'b11;        //col 3
                 press = 1;
             end
             16'b0000_0001_0000_0000: begin
-                switch = 4'0111;        //7
+                switch = 4'b0111;        //7
                 col_idx = 2'b00;        //col 0
                 press = 1;
             end
             16'b0000_0010_0000_0000: begin
-                switch = 4'1000;        //8
+                switch = 4'b1000;        //8
                 col_idx = 2'b01;        //col 1
                 press = 1;
             end
             16'b0000_0100_0000_0000: begin
-                switch = 4'1001;        //9
+                switch = 4'b1001;        //9
                 col_idx = 2'b10;        //col 2
                 press = 1;
             end
             16'b0000_1000_0000_0000: begin
-                switch = 4'1100;        //C
+                switch = 4'b1100;        //C
                 col_idx = 2'b11;        //col 3
                 press = 1;
             end
             16'b0001_0000_0000_0000: begin
-                switch = 4'1111;        //F
+                switch = 4'b1111;        //F
                 col_idx = 2'b00;        //col 0
                 press = 1;
             end
             16'b0010_0000_0000_0000: begin
-                switch = 4'0000;        //0
+                switch = 4'b0000;        //0
                 col_idx = 2'b01;        //col 1
                 press = 1;
             end
             16'b0100_0000_0000_0000: begin
-                switch = 4'1110;        //E
+                switch = 4'b1110;        //E
                 col_idx = 2'b10;        //col 2
                 press = 1;
             end
             16'b1000_0000_0000_0000: begin
-                switch = 4'1101;        //D
+                switch = 4'b1101;        //D
                 col_idx = 2'b11;        //col 3
                 press = 1;
             end
             default: begin
-                switch = 4'0000;	    //default 0
+                switch = 4'b0000;	    //default 0
                 col_idx = 2'b00;        //col 0
                 press = 0;
             end

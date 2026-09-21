@@ -10,7 +10,7 @@ module lab3_mainfsm_rk(
     input  logic        reset,
     input  logic        debounced,
     input  logic        press,
-    input  logic        switch,
+    input  logic  [3:0] switch,
     input  logic  [1:0] col_idx,
     input  logic  [3:0] cols,
     output logic  [3:0] rows,
@@ -21,7 +21,6 @@ module lab3_mainfsm_rk(
     typedef enum logic [1:0] {SCAN, PRESS, HOLD} statetype;
     
     statetype state, nextstate;
-    logic [19:0] count;
     logic        rep_clk;
     logic        scan_en;
 
@@ -30,7 +29,7 @@ module lab3_mainfsm_rk(
         else        state <= nextstate;
 
     // scanner running
-    lab2_scanning_rk #(.limit = 500000, .n = 20) scan_rows(reset, scan_en, clk, rows);
+    lab2_scanning_rk #(.limit(500000), .n(20)) scan_rows(reset, scan_en, clk, rows);
 
     always_comb
         case (state)

@@ -6,11 +6,11 @@
 //	This module is a flipflop
 
 module lab3_flipflop_rk(
-  input  logic        clk,
-  input  logic        enable,
-  input  logic        reset,
-  input  logic  [3:0] d,
-  output logic  [3:0] q
+  input  logic     	clk,
+  input  logic     	enable,
+  input  logic  	reset,
+  input  logic  	[3:0] d,
+  output logic  	[3:0] q
 );
 
     always_ff @(posedge clk) begin
