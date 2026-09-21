@@ -18,12 +18,12 @@ module lab3_debounce_rk(
     logic [19:0] count;
     logic        rep_clk;
 
-    always_ff @(posedge clk, posedge reset)
-        if(reset)   state <= IDLE;
+    always_ff @(posedge clk)
+        if(reset == 0)   state <= IDLE;
         else        state <= nextstate;
 
     // debounce counter
-    lab1_counter_rk #(.maxcount(524289), .N(20)) counter(clk, (state == WAIT), (state == IDLE), rep_clk, count);
+    lab1_counter_rk #(.maxcount(524288+1), .N(20)) counter(clk, (state == WAIT), ~(state == IDLE), rep_clk, count);
 
     always_comb begin
         case (state)
