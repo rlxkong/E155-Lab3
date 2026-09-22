@@ -55,6 +55,5 @@ module lab3rk(
     assign power[0] = seg_clk;													// Left display turns
     assign power[1] = ~seg_clk; 													// Right display turns on
     
-	assign led[3] = press;
 
 endmodule

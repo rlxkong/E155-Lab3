@@ -80,7 +80,7 @@ module lab3_mainfsm_rk_tb();
 	#22
 	// check and case
 	assert (dut.state == 2'b01)  
-            $display("PASSED! The state is HOLD at time: %0t.", $time);
+            $display("PASSED! The state is PRESS at time: %0t.", $time);
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);	
 			

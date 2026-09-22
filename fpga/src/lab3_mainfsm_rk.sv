@@ -17,7 +17,7 @@ module lab3_mainfsm_rk(
     output logic  [3:0] rows,
     output logic  [3:0] d0,
     output logic  [3:0] d1,
-	output logic  [2:0] led
+	output logic  [3:0] led
 );
 
     typedef enum logic [1:0] {SCAN, PRESS, HOLD} statetype;
@@ -26,8 +26,8 @@ module lab3_mainfsm_rk(
     logic        rep_clk;
     logic        scan_en;
 
-    always_ff @(posedge clk, posedge reset)
-        if(reset)   state <= SCAN;
+    always_ff @(posedge clk)
+        if(reset == 0)   state <= SCAN;
         else        state <= nextstate;
 
     // scanner running
@@ -45,6 +45,7 @@ module lab3_mainfsm_rk(
 	assign led[0] = (state == SCAN);
 	assign led[1] = (state == PRESS);
 	assign led[2] = (state == HOLD);
+	assign led[3] = press;
     
     always_ff @(posedge clk) begin
 		if (reset == 0) begin

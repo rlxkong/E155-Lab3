@@ -21,6 +21,7 @@ module lab3_keypress_state_rk(
 	logic 	[3:0] r1;	
 	logic 	[3:0] r2;	
 	logic 	[3:0] r3;	
+	logic   one_key;
 
     // get column readings from each row and compile into a keymap
     lab3_flipflop_rk row0(clk, rows[0], reset, columns, r0);
@@ -37,87 +38,89 @@ module lab3_keypress_state_rk(
             16'b0000_0000_0000_0001: begin
                 switch = ~4'b0001;       //1
                 col_idx = 2'b00;        //col 0
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0000_0000_0010: begin
                 switch = ~4'b0010;        //2
                 col_idx = 2'b01;        //col 1
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0000_0000_0100: begin
                 switch = ~4'b0011;        //3
                 col_idx = 2'b10;        //col 2
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0000_0000_1000: begin
                 switch = ~4'b1010;        //A
                 col_idx = 2'b11;        //col 3
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0000_0001_0000: begin
                 switch = ~4'b0100;        //4
                 col_idx = 2'b00;        //col 0
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0000_0010_0000: begin
                 switch = ~4'b0101;        //5
                 col_idx = 2'b01;        //col 1
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0000_0100_0000: begin
                 switch = ~4'b0110;        //6
                 col_idx = 2'b10;        //col 2
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0000_1000_0000: begin
                 switch = ~4'b1011;        //B
                 col_idx = 2'b11;        //col 3
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0001_0000_0000: begin
                 switch = ~4'b0111;        //7
                 col_idx = 2'b00;        //col 0
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0010_0000_0000: begin
                 switch = ~4'b1000;        //8
                 col_idx = 2'b01;        //col 1
-                press = 1;
+                one_key = 1;
             end
             16'b0000_0100_0000_0000: begin
                 switch = ~4'b1001;        //9
                 col_idx = 2'b10;        //col 2
-                press = 1;
+                one_key = 1;
             end
             16'b0000_1000_0000_0000: begin
                 switch = ~4'b1100;        //C
                 col_idx = 2'b11;        //col 3
-                press = 1;
+                one_key = 1;
             end
             16'b0001_0000_0000_0000: begin
                 switch = ~4'b1111;        //F
                 col_idx = 2'b00;        //col 0
-                press = 1;
+                one_key = 1;
             end
             16'b0010_0000_0000_0000: begin
                 switch = ~4'b0000;        //0
                 col_idx = 2'b01;        //col 1
-                press = 1;
+                one_key = 1;
             end
             16'b0100_0000_0000_0000: begin
                 switch = ~4'b1110;        //E
                 col_idx = 2'b10;        //col 2
-                press = 1;
+                one_key = 1;
             end
             16'b1000_0000_0000_0000: begin
                 switch = ~4'b1101;        //D
                 col_idx = 2'b11;        //col 3
-                press = 1;
+                one_key = 1;
             end
             default: begin
                 switch = ~4'b0000;	    //default 0
                 col_idx = 2'b00;        //col 0
-                press = 0;
+                one_key = 0;
             end
         endcase
+		
+		assign press = one_key;
 endmodule

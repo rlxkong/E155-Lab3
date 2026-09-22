@@ -21,7 +21,8 @@ module lab3_keypress_state_rk_tb();
 		.rows(rows),
 		.columns(cols),
 		.press(press),
-		.switch(switch)
+		.switch(switch),
+		.col_idx(col_idx)
     );
 	
   // generate clock
@@ -31,7 +32,7 @@ module lab3_keypress_state_rk_tb();
   end
 
 initial begin
-	// initialize
+	// initialize	
 	rows = 4'b0000;
 	cols = 4'b1111;
 	#20
@@ -51,6 +52,49 @@ initial begin
 	
 	rows = 4'b1000;
 	cols = 4'b0111;
+	#20
+	
+	
+
+	// one singular press
+	rows = 4'b0001;
+	cols = 4'b1110;
+	#20
+
+	rows = 4'b0010;
+	cols = 4'b1111;
+	#20
+	
+	rows = 4'b0100;
+	cols = 4'b1111;
+	#20
+	
+	rows = 4'b1000;
+	cols = 4'b1111;
+	#20
+	
+	
+	
+	
+	rows = 4'b0001;
+	cols = 4'b1001;
+	#20
+
+	// check state case
+	rows = 4'b0001;
+	cols = 4'b0010;
+	#20
+
+	rows = 4'b0010;
+	cols = 4'b0101;
+	#20
+	
+	rows = 4'b0100;
+	cols = 4'b1011;
+	#20
+	
+	rows = 4'b1000;
+	cols = 4'b0101;
 	#20
 	
 	

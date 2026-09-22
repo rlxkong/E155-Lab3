@@ -14,11 +14,12 @@
 # //
 # do C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/e155_lab3_rk/keypress_tb/keypress_tb.vdo
 # ** Note: (qrun-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# Deleting directory qrun.out...
 # Creating library 'qrun.out/work'.
 # Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
 # 
 # 
-# Start time: 22:22:04 on Sep 21,2026
+# Start time: 03:50:46 on Sep 22,2026
 # 
 # vlog -reportprogress 300 -L work -sv -L pmi_work -L ovi_ice40up C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
 # 
@@ -52,7 +53,7 @@
 # 
 # 	lab3_keypress_state_rk_tb
 # 
-# End time: 22:22:04 on Sep 21,2026, Elapsed time: 0:00:00
+# End time: 03:50:46 on Sep 22,2026, Elapsed time: 0:00:00
 # 
 # Errors: 0, Warnings: 0
 # 
@@ -61,7 +62,7 @@
 # 
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # 
-# Start time: 22:22:05 on Sep 21,2026
+# Start time: 03:50:46 on Sep 22,2026
 # 
 # vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up lab3_keypress_state_rk_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
 # 
@@ -93,15 +94,348 @@
 # 
 # -- Optimizing module lab3_keypress_state_rk_tb(fast)
 # 
-# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 6, found 5.
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 5.
 # 
 # ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'col_idx'.
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'reset'.
 # 
 # -- Optimizing module lab3_flipflop_rk(fast)
 # 
 # Optimized design name is qrun_opt
 # 
-# End time: 22:22:05 on Sep 21,2026, Elapsed time: 0:00:00
+# End time: 03:50:47 on Sep 22,2026, Elapsed time: 0:00:01
+# 
+# Errors: 0, Warnings: 6
+# 
+vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
+# //  Questa Lattice OEM Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/e155_lab3_rk/keypress_tb/keypress_tb.vdo
+# ** Note: (qrun-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# Deleting directory qrun.out...
+# Creating library 'qrun.out/work'.
+# Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# 
+# 
+# Start time: 04:06:37 on Sep 22,2026
+# 
+# vlog -reportprogress 300 -L work -sv -L pmi_work -L ovi_ice40up C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
+# 
+# ** Note: (vlog-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# 
+# -- Compiling module lab2_scanning_rk
+# 
+# -- Compiling module lab1_counter_rk
+# 
+# -- Compiling module lab1_sevenseg_rk
+# 
+# -- Compiling module lab3_debounce_rk
+# 
+# -- Compiling module lab3_flipflop_rk
+# 
+# -- Compiling module lab3_sync_rk
+# 
+# -- Compiling module lab3_keypress_state_rk
+# 
+# -- Compiling module lab3_mainfsm_rk
+# 
+# -- Compiling module lab3rk
+# 
+# -- Compiling module lab3_keypress_state_rk_tb
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	lab3rk
+# 
+# 	lab3_keypress_state_rk_tb
+# 
+# End time: 04:06:37 on Sep 22,2026, Elapsed time: 0:00:00
+# 
+# Errors: 0, Warnings: 0
+# 
+# Questa Lattice OEM Edition-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+# 
+# 
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# 
+# Start time: 04:06:37 on Sep 22,2026
+# 
+# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up lab3_keypress_state_rk_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+# 
+# ** Note: (vopt-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	lab3_keypress_state_rk_tb
+# 
+# 
+# 
+# Analyzing design...
+# 
+# -- Loading module lab3_keypress_state_rk_tb
+# 
+# -- Loading module lab3_keypress_state_rk
+# 
+# -- Loading module lab3_flipflop_rk
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# Optimizing 3 design-units (inlining 0/6 module instances):
+# 
+# -- Optimizing module lab3_keypress_state_rk(fast)
+# 
+# -- Optimizing module lab3_keypress_state_rk_tb(fast)
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 5.
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'col_idx'.
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'reset'.
+# 
+# -- Optimizing module lab3_flipflop_rk(fast)
+# 
+# Optimized design name is qrun_opt
+# 
+# End time: 04:06:38 on Sep 22,2026, Elapsed time: 0:00:01
+# 
+# Errors: 0, Warnings: 6
+# 
+vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
+# //  Questa Lattice OEM Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/e155_lab3_rk/keypress_tb/keypress_tb.vdo
+# ** Note: (qrun-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# Deleting directory qrun.out...
+# Creating library 'qrun.out/work'.
+# Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# 
+# 
+# Start time: 04:09:32 on Sep 22,2026
+# 
+# vlog -reportprogress 300 -L work -sv -L pmi_work -L ovi_ice40up C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
+# 
+# ** Note: (vlog-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# 
+# -- Compiling module lab2_scanning_rk
+# 
+# -- Compiling module lab1_counter_rk
+# 
+# -- Compiling module lab1_sevenseg_rk
+# 
+# -- Compiling module lab3_debounce_rk
+# 
+# -- Compiling module lab3_flipflop_rk
+# 
+# -- Compiling module lab3_sync_rk
+# 
+# -- Compiling module lab3_keypress_state_rk
+# 
+# -- Compiling module lab3_mainfsm_rk
+# 
+# -- Compiling module lab3rk
+# 
+# -- Compiling module lab3_keypress_state_rk_tb
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	lab3rk
+# 
+# 	lab3_keypress_state_rk_tb
+# 
+# End time: 04:09:32 on Sep 22,2026, Elapsed time: 0:00:00
+# 
+# Errors: 0, Warnings: 0
+# 
+# Questa Lattice OEM Edition-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+# 
+# 
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# 
+# Start time: 04:09:32 on Sep 22,2026
+# 
+# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up lab3_keypress_state_rk_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+# 
+# ** Note: (vopt-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	lab3_keypress_state_rk_tb
+# 
+# 
+# 
+# Analyzing design...
+# 
+# -- Loading module lab3_keypress_state_rk_tb
+# 
+# -- Loading module lab3_keypress_state_rk
+# 
+# -- Loading module lab3_flipflop_rk
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# Optimizing 3 design-units (inlining 0/6 module instances):
+# 
+# -- Optimizing module lab3_keypress_state_rk(fast)
+# 
+# -- Optimizing module lab3_keypress_state_rk_tb(fast)
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 5.
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'col_idx'.
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'reset'.
+# 
+# -- Optimizing module lab3_flipflop_rk(fast)
+# 
+# Optimized design name is qrun_opt
+# 
+# End time: 04:09:33 on Sep 22,2026, Elapsed time: 0:00:01
+# 
+# Errors: 0, Warnings: 6
+# 
+vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
+# //  Questa Lattice OEM Edition-64
+# //  Version 2025.2 win64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/e155_lab3_rk/keypress_tb/keypress_tb.vdo
+# ** Note: (qrun-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# Deleting directory qrun.out...
+# Creating library 'qrun.out/work'.
+# Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# 
+# 
+# Start time: 04:17:47 on Sep 22,2026
+# 
+# vlog -reportprogress 300 -L work -sv -L pmi_work -L ovi_ice40up C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
+# 
+# ** Note: (vlog-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# 
+# -- Compiling module lab2_scanning_rk
+# 
+# -- Compiling module lab1_counter_rk
+# 
+# -- Compiling module lab1_sevenseg_rk
+# 
+# -- Compiling module lab3_debounce_rk
+# 
+# -- Compiling module lab3_flipflop_rk
+# 
+# -- Compiling module lab3_sync_rk
+# 
+# -- Compiling module lab3_keypress_state_rk
+# 
+# -- Compiling module lab3_mainfsm_rk
+# 
+# -- Compiling module lab3rk
+# 
+# -- Compiling module lab3_keypress_state_rk_tb
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	lab3rk
+# 
+# 	lab3_keypress_state_rk_tb
+# 
+# End time: 04:17:47 on Sep 22,2026, Elapsed time: 0:00:00
+# 
+# Errors: 0, Warnings: 0
+# 
+# Questa Lattice OEM Edition-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+# 
+# 
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# 
+# Start time: 04:17:47 on Sep 22,2026
+# 
+# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up lab3_keypress_state_rk_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+# 
+# ** Note: (vopt-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
+# 
+# 
+# 
+# Top level modules:
+# 
+# 	lab3_keypress_state_rk_tb
+# 
+# 
+# 
+# Analyzing design...
+# 
+# -- Loading module lab3_keypress_state_rk_tb
+# 
+# -- Loading module lab3_keypress_state_rk
+# 
+# -- Loading module lab3_flipflop_rk
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
+# 
+# Optimizing 3 design-units (inlining 0/6 module instances):
+# 
+# -- Optimizing module lab3_keypress_state_rk(fast)
+# 
+# -- Optimizing module lab3_keypress_state_rk_tb(fast)
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+# 
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'reset'.
+# 
+# -- Optimizing module lab3_flipflop_rk(fast)
+# 
+# Optimized design name is qrun_opt
+# 
+# End time: 04:17:47 on Sep 22,2026, Elapsed time: 0:00:00
 # 
 # Errors: 0, Warnings: 5
 # 
@@ -127,7 +461,7 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
 # 
 # 
-# Start time: 22:25:45 on Sep 21,2026
+# Start time: 04:22:40 on Sep 22,2026
 # 
 # vlog -reportprogress 300 -L work -sv -L pmi_work -L ovi_ice40up C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
 # 
@@ -161,7 +495,7 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # 	lab3_keypress_state_rk_tb
 # 
-# End time: 22:25:45 on Sep 21,2026, Elapsed time: 0:00:00
+# End time: 04:22:40 on Sep 22,2026, Elapsed time: 0:00:00
 # 
 # Errors: 0, Warnings: 0
 # 
@@ -170,7 +504,7 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
 # 
-# Start time: 22:25:45 on Sep 21,2026
+# Start time: 04:22:40 on Sep 22,2026
 # 
 # vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up lab3_keypress_state_rk_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
 # 
@@ -202,124 +536,15 @@ vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -d
 # 
 # -- Optimizing module lab3_keypress_state_rk_tb(fast)
 # 
-# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 6, found 5.
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
 # 
-# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'col_idx'.
-# 
-# -- Optimizing module lab3_flipflop_rk(fast)
-# 
-# Optimized design name is qrun_opt
-# 
-# End time: 22:25:46 on Sep 21,2026, Elapsed time: 0:00:01
-# 
-# Errors: 0, Warnings: 5
-# 
-vsim -L work -L pmi_work -L ovi_ice40up -lib qrun.out/work -wlf vsim.wlf -gui -do {view wave} -do {add wave /*} -do {run -all} -statslog qrun.out/stats_log qrun_opt -suppress vsim-7033,vsim-8630,3009,3389 -appendlog -l qrun.log
-# //  Questa Lattice OEM Edition-64
-# //  Version 2025.2 win64 May 31 2025
-# //
-# // Unpublished work. Copyright 2025 Siemens
-# //
-# // This material contains trade secrets or otherwise confidential information
-# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
-# // "SISW"), or its licensors. Access to and use of this information is strictly
-# // limited as set forth in the Customer's applicable agreements with SISW.
-# //
-# // This material may not be copied, distributed, or otherwise disclosed outside
-# // of the Customer's facilities without the express written permission of SISW,
-# // and may not be used in any way not expressly authorized by SISW.
-# //
-# do C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/e155_lab3_rk/keypress_tb/keypress_tb.vdo
-# ** Note: (qrun-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
-# Deleting directory qrun.out...
-# Creating library 'qrun.out/work'.
-# Questa Lattice OEM Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
-# 
-# 
-# Start time: 22:39:56 on Sep 21,2026
-# 
-# vlog -reportprogress 300 -L work -sv -L pmi_work -L ovi_ice40up C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
-# 
-# ** Note: (vlog-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
-# 
-# -- Compiling module lab2_scanning_rk
-# 
-# -- Compiling module lab1_counter_rk
-# 
-# -- Compiling module lab1_sevenseg_rk
-# 
-# -- Compiling module lab3_debounce_rk
-# 
-# -- Compiling module lab3_flipflop_rk
-# 
-# -- Compiling module lab3_sync_rk
-# 
-# -- Compiling module lab3_keypress_state_rk
-# 
-# -- Compiling module lab3_mainfsm_rk
-# 
-# -- Compiling module lab3rk
-# 
-# -- Compiling module lab3_keypress_state_rk_tb
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	lab3rk
-# 
-# 	lab3_keypress_state_rk_tb
-# 
-# End time: 22:39:56 on Sep 21,2026, Elapsed time: 0:00:00
-# 
-# Errors: 0, Warnings: 0
-# 
-# Questa Lattice OEM Edition-64 vopt 2025.2 Compiler 2025.05 May 31 2025
-# 
-# 
-# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
-# 
-# Start time: 22:39:56 on Sep 21,2026
-# 
-# vopt -reportprogress 300 -L work "+acc" "+noacc+pmi_work.*" "+noacc+ovi_ice40up.*" -L pmi_work -L ovi_ice40up lab3_keypress_state_rk_tb -suppress vopt-7033 -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
-# 
-# ** Note: (vopt-220) 'C:/lscc/radiant/2026.1/questasim/win64/../modelsim.ini' is used as the ini file.
-# 
-# 
-# 
-# Top level modules:
-# 
-# 	lab3_keypress_state_rk_tb
-# 
-# 
-# 
-# Analyzing design...
-# 
-# -- Loading module lab3_keypress_state_rk_tb
-# 
-# -- Loading module lab3_keypress_state_rk
-# 
-# -- Loading module lab3_flipflop_rk
-# 
-# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
-# 
-# ** Warning: (vopt-2108) Cannot find module '*' specified in +noacc option.
-# 
-# Optimizing 3 design-units (inlining 0/6 module instances):
-# 
-# -- Optimizing module lab3_keypress_state_rk(fast)
-# 
-# -- Optimizing module lab3_keypress_state_rk_tb(fast)
-# 
-# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 6, found 5.
-# 
-# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'col_idx'.
+# ** Warning: C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_tb.sv(19): (vopt-2718) [TFMPC] - Missing connection for port 'reset'.
 # 
 # -- Optimizing module lab3_flipflop_rk(fast)
 # 
 # Optimized design name is qrun_opt
 # 
-# End time: 22:39:57 on Sep 21,2026, Elapsed time: 0:00:01
+# End time: 04:22:41 on Sep 22,2026, Elapsed time: 0:00:01
 # 
 # Errors: 0, Warnings: 5
 # 
