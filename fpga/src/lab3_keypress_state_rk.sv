@@ -8,6 +8,7 @@
 
 module lab3_keypress_state_rk(
     input  logic        clk,
+	input  logic   	     reset,
     input  logic [3:0]  rows,
     input  logic [3:0]  columns,
     output logic        press,
@@ -22,10 +23,10 @@ module lab3_keypress_state_rk(
 	logic 	[3:0] r3;	
 
     // get column readings from each row and compile into a keymap
-    lab3_flipflop_rk row0(clk, rows[0], 1'b1, columns, r0);
-    lab3_flipflop_rk row1(clk, rows[1], 1'b1, columns, r1);
-    lab3_flipflop_rk row2(clk, rows[2], 1'b1, columns, r2);
-    lab3_flipflop_rk row3(clk, rows[3], 1'b1, columns, r3);
+    lab3_flipflop_rk row0(clk, rows[0], reset, columns, r0);
+    lab3_flipflop_rk row1(clk, rows[1], reset, columns, r1);
+    lab3_flipflop_rk row2(clk, rows[2], reset, columns, r2);
+    lab3_flipflop_rk row3(clk, rows[3], reset, columns, r3);
 
     // keymap order is DE0F C987 B654 A321
     assign keymap = {r3, r2, r1, r0};                       // combine all the row-col outputs into one map

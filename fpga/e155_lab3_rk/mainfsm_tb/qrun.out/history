@@ -1,0 +1,3 @@
+- Entry: 1
+  Time: Tue Sep 22 01:34:03 2026
+  Command: C:\lscc\radiant\2026.1\questasim\win64\qrun.exe -reportprogress 300 -guimode -clean -f C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/e155_lab3_rk/mainfsm_tb/mainfsm_tb.f 
