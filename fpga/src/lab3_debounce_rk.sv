@@ -29,7 +29,7 @@ module lab3_debounce_rk(
         case (state)
             IDLE:    nextstate = ~(keymap == 16'b1111_1111_1111_1111) ? WAIT : IDLE;
             WAIT:    if (keymap == 16'b1111_1111_1111_1111)       						nextstate = IDLE;       //bounce
-                     else if (count[19] & (~(keymap == 4'b1111_1111_1111_1111)))      nextstate = PRESSED;
+                     else if (count[19] & (~(keymap == 16'b1111_1111_1111_1111)))      nextstate = PRESSED;
                      else                        										nextstate = WAIT;
             PRESSED: nextstate = (keymap == 16'b1111_1111_1111_1111) ? IDLE : PRESSED;
             default: nextstate = IDLE;

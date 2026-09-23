@@ -8,16 +8,16 @@
 `timescale 1 ps/1 ps
 
 module lab3_debounce_rk_tb();
-  logic    		  clk;
+  logic    		clk;
   logic    		reset;
-  logic 		[3:0] col;   
-  logic    	   deb_en;    
+  logic  [15:0] map;   
+  logic    		deb_en;    
 
 
     lab3_debounce_rk dut (
 		.clk(clk),
         .reset(reset),
-		.columns(col),
+		.keymap(map),
 		.deb_enabled(deb_en)
     );
 	
@@ -32,7 +32,7 @@ module lab3_debounce_rk_tb();
 	// initialize
 	reset = 1;
 	#10
-	col = 4'b1111;
+	map = 16'b1111111111111111;
 	#10
 	
 	// check state case
@@ -41,20 +41,20 @@ module lab3_debounce_rk_tb();
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
 	#15
-	col = 4'b1100;
-	#17
+	map = 16'b1111111111111110;
+	#58
 	assert (dut.state == 2'b01)  
             $display("PASSED! The state is WAIT at time: %0t.", $time);
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
 	#16
-	col = 4'b1111;
+	map = 16'b1111111111111111;
 	#45
 	assert (dut.state == 2'b00)  
             $display("PASSED! The state is IDLE at time: %0t.", $time);
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
-	col = 4'b0000;
+	map = 16'b0111111111111111;
 	#19
 	assert (dut.state == 2'b01)  
             $display("PASSED! The state is WAIT at time: %0t.", $time);
@@ -70,7 +70,7 @@ module lab3_debounce_rk_tb();
             $display("PASSED! The deb_enable behaves as desired at time: %0t.", $time);
         else 
             $error("FAILED! The deb_enable behaves as desired at time: %0t.", $time);
-	#10500000
+	#10486000
 	assert (dut.state == 2'b10)  
             $display("PASSED! The state is PRESSED at time: %0t.", $time);
         else 
@@ -81,7 +81,7 @@ module lab3_debounce_rk_tb();
         else 
             $error("FAILED! The deb_enable behaves as desired at time: %0t.", $time);			
 	#20
-	col = 4'b1111;
+	map = 16'b1111111111111111;
 	#50
 	assert (deb_en == 0)  
             $display("PASSED! The deb_enable behaves as desired at time: %0t.", $time);
@@ -89,8 +89,8 @@ module lab3_debounce_rk_tb();
             $error("FAILED! The deb_enable behaves as desired at time: %0t.", $time);	
 	
 	// reset verification
-	col = 4'b0101;
-	#10
+	map = 16'b1111111111111101;
+	#50
 	reset = 0;
 	#30
 	assert (dut.state == 2'b00)  
