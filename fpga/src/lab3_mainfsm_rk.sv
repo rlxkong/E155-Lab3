@@ -20,32 +20,38 @@ module lab3_mainfsm_rk(
 	output logic  [3:0] led
 );
 
-    typedef enum logic [1:0] {SCAN, PRESS, HOLD} statetype;
-    
+    typedef enum logic [2:0] {SCAN, PRESS, HOLD} statetype;
     statetype state, nextstate;
-    logic        rep_clk;
-    logic        scan_en;
+	logic	[3:0] d_new;
 
     always_ff @(posedge clk)
         if(reset == 0)   state <= SCAN;
         else        state <= nextstate;
 
     // scanner running
-    lab2_scanning_rk #(.limit(524288+1), .n(20)) scan_rows(reset, scan_en, clk, rows);
+    lab2_scanning_rk #(.limit(320000), .n(20)) scan_rows(reset, enable, clk, rows);		// 150Hz
 
     always_comb
         case (state)
             SCAN:    nextstate = (debounced & press) ? PRESS : SCAN;
             PRESS:   nextstate = HOLD;
-            HOLD:    nextstate = (cols[col_idx]) ? SCAN : HOLD;
+            HOLD:    nextstate = (~press) ? SCAN : HOLD;
             default: nextstate = SCAN;
         endcase
-    
-    assign scan_en = (state == SCAN);
+
+	// testing leds
 	assign led[0] = (state == SCAN);
 	assign led[1] = (state == PRESS);
 	assign led[2] = (state == HOLD);
 	assign led[3] = press;
+	
+	// display store logic
+	always_ff @(posedge clk) begin
+		if (reset == 0)
+			d_new <= 4'b0000;
+		else 
+			d_new <= switch;
+	end
     
     always_ff @(posedge clk) begin
 		if (reset == 0) begin
@@ -54,7 +60,7 @@ module lab3_mainfsm_rk(
 		end
 		else if (enable & (state == PRESS)) begin
 			d1 <= d0;
-			d0 <= switch;
+			d0 <= d_new;
 		end
     end
     
