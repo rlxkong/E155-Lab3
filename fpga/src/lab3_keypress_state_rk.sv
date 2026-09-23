@@ -25,15 +25,17 @@ module lab3_keypress_state_rk(
 	
 	logic 	[16:0] off_edge_count;
 	logic 		   off_edge_samp;
+	logic 		   samp;
 
     // get column readings from each row and compile into a keymap
-    lab3_flipflop_rk row0(clk, rows[0], reset, columns, r0);
-    lab3_flipflop_rk row1(clk, rows[1], reset, columns, r1);
-    lab3_flipflop_rk row2(clk, rows[2], reset, columns, r2);
-    lab3_flipflop_rk row3(clk, rows[3], reset, columns, r3);
+    lab3_flipflop_rk row0(clk, (rows[0] & samp), reset, columns, r0);
+    lab3_flipflop_rk row1(clk, (rows[1] & samp), reset, columns, r1);
+    lab3_flipflop_rk row2(clk, (rows[2] & samp), reset, columns, r2);
+    lab3_flipflop_rk row3(clk, (rows[3] & samp), reset, columns, r3);
 	
 	// get timming for middle of clock cycles to ensure clean reading
-	lab1_counter_rk #(.maxcount(80000), .N(17)) counter (clk, enable, reset, off_edge_samp, off_edge_count);
+	lab1_counter_rk #(.maxcount(80000), .N(17)) samp_counter(clk, enable, reset, off_edge_samp, off_edge_count);
+	assign samp = (off_edge_count == 17'd50000);
 
     // keymap order is DE0F C987 B654 A321
 	// combine all the row-col outputs into one map
