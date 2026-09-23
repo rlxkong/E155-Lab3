@@ -8,7 +8,7 @@
 module lab3_debounce_rk(
     input  logic        clk,
     input  logic        reset,
-    input  logic [3:0]  columns,
+    input  logic [15:0] keymap,
     output logic        deb_enabled
 );
 
@@ -20,18 +20,18 @@ module lab3_debounce_rk(
 
     always_ff @(posedge clk)
         if(reset == 0)   state <= IDLE;
-        else        state <= nextstate;
+        else        	  state <= nextstate;
 
     // debounce counter
     lab1_counter_rk #(.maxcount(524288+1), .N(20)) counter(clk, (state == WAIT), ~(state == IDLE), rep_clk, count);
 
     always_comb begin
         case (state)
-            IDLE:    nextstate = (columns == 4'b1111) ? IDLE : WAIT;
-            WAIT:    if (columns == 4'b1111)     nextstate = IDLE;       //bounce
-                     else if (count[19])         nextstate = PRESSED;
-                     else                        nextstate = WAIT;
-            PRESSED: nextstate = (columns == 4'b1111) ? IDLE : PRESSED;
+            IDLE:    nextstate = ~(keymap == 16'b1111_1111_1111_1111) ? WAIT : IDLE;
+            WAIT:    if (keymap == 16'b1111_1111_1111_1111)       						nextstate = IDLE;       //bounce
+                     else if (count[19] & (~(keymap == 4'b1111_1111_1111_1111)))      nextstate = PRESSED;
+                     else                        										nextstate = WAIT;
+            PRESSED: nextstate = (keymap == 16'b1111_1111_1111_1111) ? IDLE : PRESSED;
             default: nextstate = IDLE;
         endcase
     end

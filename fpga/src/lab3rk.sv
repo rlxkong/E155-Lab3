@@ -39,13 +39,13 @@ module lab3rk(
     lab3_sync_rk syncro_col(int_osc, cols, sync_col);
 
     // Debounce logic
-    lab3_debounce_rk debounce_mod(int_osc, reset, sync_col, debounced);
+    lab3_debounce_rk debounce_mod(int_osc, reset, map, debounced);
 
     // Check keypress state
     lab3_keypress_state_rk keystate(int_osc, reset, enable, rows, sync_col, press, sw, map, col_idx);
 
     // MainFSM
-    lab3_mainfsm_rk mainfsm(int_osc, reset, enable, 1'b1, press, sw, col_idx, sync_col, rows, d0, d1, led);
+    lab3_mainfsm_rk mainfsm(int_osc, reset, enable, debounced, press, sw, col_idx, sync_col, rows, d0, d1, led);
 		 
     // Segments Logic
 
