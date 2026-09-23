@@ -77,6 +77,7 @@ module lab3_mainfsm_rk_tb();
 	press = 1;
 	#5
 	cols = 4'b1011;
+	switch = ~4'b0010;
 	#22
 	// check and case
 	assert (dut.state == 2'b01)  
@@ -91,44 +92,64 @@ module lab3_mainfsm_rk_tb();
             $display("PASSED! The state is HOLD at time: %0t.", $time);
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
-	#16
-	cols = 4'b1000;
-	#5
-	debounced = 0;
-	#5
-	press = 0;
-	#8
-	assert (dut.state == 2'b10)  
-            $display("PASSED! The state is HOLD at time: %0t.", $time);
-        else 
-            $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
+			
+	#24
 	
-	#5	
-	cols = 4'b1011;
-	#5
-	press = 1;
-	#22
+	
 	assert (dut.state == 2'b10)  
             $display("PASSED! The state is HOLD at time: %0t.", $time);
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
 			
+	#16		
+	debounced = 0;
+	press = 0;	
+	#5
 	cols = 4'b1110;
+	switch = ~4'b1010;
+	press = 1;
+	debounced = 1;
+	#29
+	assert (dut.state == 2'b10)  
+            $display("PASSED! The state is HOLD at time: %0t.", $time);
+        else 
+            $error("FAILED! The state behaves incorrectly at time: %0t.", $time);		
+			
+	#16
+	cols = 4'b1000;
+	switch = ~4'b0010;
+	debounced = 0;
+	press = 0;
+	#26
+	assert (dut.state == 2'b00)  
+            $display("PASSED! The state is SCAN at time: %0t.", $time);
+        else 
+            $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
+	
+	#5	
+	cols = 4'b0111;
+	switch = ~4'b0001;
+	press = 1;
+	#32
+	assert (dut.state == 2'b00)  
+            $display("PASSED! The state is SCAN at time: %0t.", $time);
+        else 
+            $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
+			
 	#5
 	debounced = 1;
-	#21
+	#45
 	assert (dut.state == 2'b01)  
             $display("PASSED! The state is PRESS at time: %0t.", $time);
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
 	// enable verification
-	#5
 	enable = 0;
 	#65
-	assert (dut.state == 2'b01)  
-            $display("PASSED! The enable works as desired and state is PRESS at time: %0t.", $time);
+	assert (dut.state == 2'b10)  
+            $display("PASSED! The enable works as desired at time: %0t.", $time);
         else 
-            $error("FAILED! The enable and state behave incorrectly at time: %0t.", $time);
+            $error("FAILED! The enable behaves incorrectly at time: %0t.", $time);
 			
 	// reset verification
 	#10
@@ -144,8 +165,21 @@ module lab3_mainfsm_rk_tb();
 	reset = 1;
 	#50
 	reset = 0;
+	#20
 	assert (dut.state == 2'b00)  
             $display("PASSED! The state is SCAN at time: %0t.", $time);
+        else 
+            $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
+		
+	reset = 1;
+	#5
+	debounced = 1;
+	press = 1;
+	cols = 4'b1101;
+	switch = ~4'b0011;
+	#50
+	assert (dut.state == 2'b10)  
+            $display("PASSED! The state is HOLD at time: %0t.", $time);
         else 
             $error("FAILED! The state behaves incorrectly at time: %0t.", $time);
 	

@@ -13,7 +13,7 @@ Z1 dC:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/e155_lab3_rk/keypress_tb
 vlab1_counter_rk
 Z2 2C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk_tb.sv
 Z3 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z4 !s110 1790171144
+Z4 !s110 1790190704
 !i10b 1
 !s100 87[=laACkN8oPnPZ14b@A3
 IK4Ug_R17o1TaRPYTRlAD12
@@ -29,7 +29,7 @@ Z7 OL;L;2025.2;82
 r1
 !s85 0
 31
-Z8 !s108 1790171144.000000
+Z8 !s108 1790190704.000000
 Z9 !s107 C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk_tb.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv|
 Z10 !s90 -reportprogress|300|-L|work|-sv|-L|pmi_work|-L|ovi_ice40up|C:/Users/rkong/Documents/GitHub/E155-Lab2/fpga/code/lab2_scanning_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_counter_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab1/fpga/e155_lab1_rk/source/impl_1/lab1_sevenseg_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_debounce_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_flipflop_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_sync_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_mainfsm_rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3rk.sv|C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk_tb.sv|-work|qrun.out/work|-statslog|qrun.out/stats_log|-csession=incr|
 !i113 0
@@ -165,15 +165,15 @@ R2
 R3
 R4
 !i10b 1
-!s100 CWj3;nXkbKGlOYMBDmC>20
-I=2QKW7Pmm9>V:BWCGXe=P3
+!s100 [jYZj^F9;N>FK>f=Ak;@D1
+IHBm?SdLGL1DfZ?C[n6FFY1
 S1
 R1
-w1790171085
+w1790190651
 8C:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk_tb.sv
 FC:/Users/rkong/Documents/GitHub/E155-Lab3/fpga/src/lab3_keypress_state_rk_tb.sv
 !i122 0
-L0 10 390
+L0 10 298
 R6
 R7
 r1
@@ -263,8 +263,8 @@ R12
 Tqrun_opt
 !i145 1
 !i144 0
-!s110 1790171145
-V]aj]U1[oOz0k_0`OC4Yn93
+!s110 1790190705
+VM3_1HDeE<US4z0MAYAm691
 04 25 4 work lab3_keypress_state_rk_tb fast 0
 R0
 !s12f OEM25U7 
