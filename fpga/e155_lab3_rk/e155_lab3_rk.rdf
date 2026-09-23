@@ -39,6 +39,15 @@
         <Source name="../src/lab3_debounce_rk_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
             <Options VerilogStandard="System Verilog"/>
         </Source>
+        <Source name="../src/lab3_mainfsm_rk_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="../../../E155-Lab2/fpga/code/lab2_scanning_rk_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
+        <Source name="../src/lab3_keypress_state_rk_tb.sv" type="Verilog" type_short="Verilog" excluded="TRUE">
+            <Options VerilogStandard="System Verilog"/>
+        </Source>
         <Source name="debounce_tb/debounce_tb.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>
@@ -46,6 +55,15 @@
             <Options/>
         </Source>
         <Source name="first_attempt.pdc" type="Physical Constraints File" type_short="PDC">
+            <Options/>
+        </Source>
+        <Source name="keypress_tb/keypress_tb.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="scanner_tb/scanner_tb.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="sdfsdfsfs/sdfsdfsfs.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>
         <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
